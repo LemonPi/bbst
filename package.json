@@ -1,0 +1,17 @@
+{
+  "name": "bbst",
+  "version": "0.0.1",
+  "author": {
+    "name": "Johnson Zhong",
+    "email": "johnsonzhong@hotmail.ca"
+  },
+  "description": "Balanced binary search tree implemented as Treaps",
+  "keywords": [
+    "binary search tree",
+    "self-balancing",
+    "Treap"
+  ],
+  "scripts": {
+    "test": "mocha"
+  }
+}
