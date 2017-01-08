@@ -85,6 +85,20 @@ describe("Balanced binary search tree implemented as a treap", function () {
             assert.strictEqual(dups.size, 0);
         });
     });
+    describe("#find", function () {
+        let bst = generateSequentialBST(1000);
+        it("should find and return an existing node", function () {
+            const key = 456;
+            const found = bst.find(key);
+            assert(found !== BST.NIL);
+            assert.strictEqual(found.key, key);
+        });
+        it("should not find a non-existing node and return NIL", function () {
+            const key = 1111;
+            const found = bst.find(key);
+            assert(found === BST.NIL);
+        });
+    });
     describe("#erase, eraseNode", function () {
         let bst = generateSequentialBST(10);
         it("should be able to erase by key equality", function () {

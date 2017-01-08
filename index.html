@@ -6,10 +6,12 @@
 </head>
 <body>
 <script>
-const bst = new Treap(); 
-for (let key = 0; key < 10; ++key) {
-    bst.insert({key});
-}
+    const BST = Treap;
+    const bst = new BST();
+    for (let key = 0; key < 10; ++key) {
+        bst.insert({key});
+    }
+    bst.print();
 </script>
 </body>
 </html>
