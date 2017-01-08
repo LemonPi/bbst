@@ -24,10 +24,12 @@ npm test
 The API provides `insert`, `changeKey`, `find`, `erase`, iteration, `reverseIterator`, `size`, `height`, `print`, and variants of the above (to be covered in examples below).
 
 First you need to include the module, which is easy in both node and a browser (look at index.html).
+
 ### node
 ```javascript
 const BST = require("bbst");
 ```
+
 ### browser
 ```html
 <html>
@@ -63,7 +65,7 @@ bst.insert({key:1, name:"An imposter"});
 
 ### iteration
 Iterating forward will do so in increasing key order
-```javscript
+```javascript
 for (let node of bst) {
   console.log(node.key);  // print keys smallest to largest
 }
