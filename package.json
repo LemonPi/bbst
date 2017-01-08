@@ -8,10 +8,18 @@
   "description": "Balanced binary search tree implemented as Treaps",
   "keywords": [
     "binary search tree",
+    "fast",
+    "fast iteration",
+    "iteratable",
     "self-balancing",
     "Treap"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:LemonPi/bbst.git"
+  },
   "scripts": {
     "test": "mocha"
-  }
+  },
+  "license": "MIT"
 }
