@@ -18,6 +18,7 @@
     "type": "git",
     "url": "git@github.com:LemonPi/bbst.git"
   },
+  "main": "src/treap.js",
   "scripts": {
     "test": "mocha"
   },
