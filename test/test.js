@@ -2,7 +2,7 @@
  * Created by Johnson on 2017-01-07.
  */
 const assert = require("assert");
-const BST = require("../src/treap");
+const BST = require("../index");
 
 function isBSTSubtree(node) {
     // assumes node !== NIL

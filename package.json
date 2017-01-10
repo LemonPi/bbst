@@ -18,9 +18,12 @@
     "type": "git",
     "url": "git@github.com:LemonPi/bbst.git"
   },
-  "main": "src/treap.js",
+  "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "seedrandom": "^2.4.2"
+  }
 }
