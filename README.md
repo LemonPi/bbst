@@ -4,7 +4,7 @@ This implementation focuses on fast iteration, and provides generators for doing
 
 Treaps are simple and fast. In most cases, it provides up to 4x faster inserts, and 2x faster erases than a similar RB tree implementation.
 
-Deterministic behaviour can be achieved by seeding the RNG. This will come in a future release.
+Deterministic behaviour can be achieved by seeding the RNG.
 
 ## Installation
 Package name is `bbst`
@@ -45,6 +45,11 @@ const BST = Treap;
 </html>
 ```
 From this point on, usage is the same on both platforms; let's assume we name the class `BST`.
+
+### deterministic seed
+```javascript
+BST.seedrandom("some value");
+```
 
 ### construction
 ```javascript
