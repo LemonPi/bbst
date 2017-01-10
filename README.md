@@ -17,7 +17,11 @@ npm install bbst --save
 ```bash
 npm install mocha
 
+// perform random test
 npm test
+
+// test with specific seed "seed"
+npm test seed
 ```
 
 ## Usage

@@ -4,6 +4,10 @@
 const assert = require("assert");
 const BST = require("../index");
 
+if (process && process.argv[3]) {
+    BST.seedrandom(process.argv[3]);
+}
+
 function isBSTSubtree(node) {
     // assumes node !== NIL
     if (node.left !== BST.NIL) {
@@ -121,6 +125,11 @@ describe("Balanced binary search tree implemented as a treap", function () {
             assert(bst.find(5) === BST.NIL);
             assert(isBST(bst));
         });
+        it("should erase root without destroying tree", function() {
+            bst.eraseNode(bst.root);
+            assert(isBST(bst));
+            assert.strictEqual(bst.size(), 7);
+        });
         let emptyBst = new BST();
         it("should not do anything on empty tree", function () {
             emptyBst.erase(6);
@@ -130,7 +139,7 @@ describe("Balanced binary search tree implemented as a treap", function () {
         });
         describe("repeated erase of random elements", function () {
             const toErase = 10;
-            let size = 100;
+            let size = 20;
             let elems = generateRandomArray(size);
             let bst = new BST();
             elems.forEach((key)=> {
@@ -146,11 +155,18 @@ describe("Balanced binary search tree implemented as a treap", function () {
         });
     });
     describe("#changeKey", function () {
-        let bst = generateSequentialBST(40);
+        const size = 40;
+        let bst = generateSequentialBST(size);
         it("should allow changing a node's key directly without reinsertion", function () {
             let node = bst.find(12);
             bst.changeKey(node, 13);
             assert(isBST(bst));
+            assert.strictEqual(bst.size(), size);
+        });
+        it("should change root's key without destroying tree", function () {
+            bst.changeKey(bst.root, 30);
+            assert(isBST(bst));
+            assert.strictEqual(bst.size(), size);
         });
     });
     describe("#iteration", function () {

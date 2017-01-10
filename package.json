@@ -20,7 +20,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha test/test.js"
   },
   "license": "MIT",
   "dependencies": {

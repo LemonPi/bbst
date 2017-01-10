@@ -334,13 +334,19 @@ class Treap {
         node.key = newKey;
 
         let parent = node.parent;
-        if (goLeft) {
-            while (parent !== this.root && node.key < parent.key) {
-                parent = parent.parent;
-            }
+
+        // was previously root, so has no parent
+        if (parent === NIL) {
+            parent = this.root;
         } else {
-            while (parent !== this.root && node.key > parent.key) {
-                parent = parent.parent;
+            if (goLeft) {
+                while (parent !== this.root && node.key < parent.key) {
+                    parent = parent.parent;
+                }
+            } else {
+                while (parent !== this.root && node.key > parent.key) {
+                    parent = parent.parent;
+                }
             }
         }
         // insert will take care of getting new parent
