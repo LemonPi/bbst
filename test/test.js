@@ -25,6 +25,13 @@ function generateRandomBST(size) {
     }
     return bst;
 }
+function generateRandomArray(size) {
+    const arr = [];
+    for (let i = 0; i < size; ++i) {
+        arr.push(Math.round(Math.random() * size));
+    }
+    return arr;
+}
 function generateSequentialBST(size) {
     const bst = new BST();
     for (let key = 0; key < size; ++key) {
@@ -105,6 +112,7 @@ describe("Balanced binary search tree implemented as a treap", function () {
             bst.erase(6);
             assert(bst.find(6) === BST.NIL);
             assert(isBST(bst));
+            assert.strictEqual(bst.size(), 9);
         });
         it("should be able to erase by node equality", function () {
             let node = bst.find(5);
@@ -119,6 +127,22 @@ describe("Balanced binary search tree implemented as a treap", function () {
         });
         it("should not do anything when deleting non-existing key", function () {
             bst.erase(11);
+        });
+        describe("repeated erase of random elements", function () {
+            const toErase = 10;
+            let size = 100;
+            let elems = generateRandomArray(size);
+            let bst = new BST();
+            elems.forEach((key)=> {
+                bst.insert({key});
+            });
+            for (let erased = 0; erased < toErase; ++erased) {
+                it(`erase ${erased+1} random element`, function () {
+                    bst.erase(elems[erased]);
+                    --size;
+                    assert(bst.size(), size);
+                });
+            }
         });
     });
     describe("#changeKey", function () {
